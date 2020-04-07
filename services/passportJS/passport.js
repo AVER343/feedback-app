@@ -6,7 +6,8 @@ const User= mongoose.model('users')
 passport.use(new GoogleStrategy({
                 clientID:config.GoogleOAuth.web.client_id,
                 clientSecret:config.GoogleOAuth.web.client_secret,
-                callbackURL:'/auth/google/callback'},
+                callbackURL:'/auth/google/callback',
+                proxy:true},
                 (accessToken,refreshToken,profile,done)=>
                     {
                         User.findOne({googleID:profile.id})
