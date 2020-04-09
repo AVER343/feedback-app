@@ -10,7 +10,7 @@ class  App extends React.Component{
    
     async componentDidMount (){
        consta = await this.props.FetchData()
-       console.log(a)
+       console.log(a+"user")
     }
    render(){
       const SurveysPageComponent=()=><h1>SurveysPageComponent</h1>
