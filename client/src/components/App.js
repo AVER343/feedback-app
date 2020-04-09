@@ -9,7 +9,7 @@ import Payments from './payments'
 class  App extends React.Component{
    
     async componentDidMount (){
-       consta = await this.props.FetchData()
+       const a = await this.props.FetchData()
        console.log(a+"user")
     }
    render(){
