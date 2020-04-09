@@ -8,8 +8,9 @@ import LandingPage from './LandingPage'
 import Payments from './payments'
 class  App extends React.Component{
    
-    componentDidMount(){
-       this.props.FetchData()
+    async componentDidMount (){
+       consta = await this.props.FetchData()
+       console.log(a)
     }
    render(){
       const SurveysPageComponent=()=><h1>SurveysPageComponent</h1>
