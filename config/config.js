@@ -13,4 +13,7 @@ const GoogleOAuth =
     }
 const mongoDbUrl='mongodb+srv://aver343:drowssap@feedback-app-3rqn4.mongodb.net/test?retryWrites=true&w=majority'
 const cookieKey="ThatRightThere"
-module.exports= {GoogleOAuth,mongoDbUrl,cookieKey}
+const Publishable_key="pk_test_bl603zEfmCRS029f1nBjOK0l005vR1MWD5"
+const Secret_key="sk_test_vWQ993FKQmeDK8l1kb8XTqGF00M9of6mNJ"
+
+module.exports= {GoogleOAuth,mongoDbUrl,cookieKey,Publishable_key,Secret_key}

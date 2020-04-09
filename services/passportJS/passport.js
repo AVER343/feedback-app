@@ -13,19 +13,20 @@ passport.use(new GoogleStrategy({
                 clientSecret:config.GoogleOAuth.web.client_secret,
                 callbackURL:`${server}/auth/google/callback`,
                 proxy:true},
-                (accessToken,refreshToken,profile,done)=>
+                async (accessToken,refreshToken,profile,done)=>
                     {
-                        User.findOne({googleID:profile.id})
-                        .then(existingUser=>{
+                        const existingUser=await User.findOne({googleID:profile.id})
                             if(existingUser)
                             {
                                 done(null,existingUser)
                             }
-                            else{
+                            else
+                            {
                                 const user = new User({googleID:profile.id,gmail:profile.emails[0].value})
-                                user.save().then(user=>done(null,user)) 
+                                await user.save()
+                                await done(null,user) 
                             }
-                        })
+                     
                     }
             ))
 passport.serializeUser((user,done)=>{
